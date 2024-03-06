@@ -11,9 +11,29 @@
         body { background-color: white; }
         .header, .footer { text-align: center; padding: 1rem; }
         .main-content { margin: 20px; padding: 20px; }
+
+        .fullscreen-bg {
+            position: fixed; /* Make it cover the entire screen */
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            overflow: hidden;
+            z-index: -1; /* Ensure it stays behind other content */
+        }
+        
+        .fullscreen-bg img {
+            width: 100vw;   /* Cover the width of the screen */
+            height: 100vh;  /* Cover the height of the screen */
+            object-fit: cover; /* Ensure the aspect ratio is maintained while covering the screen */
+        }
+        
     </style>
 </head>
 <body>
+    <div class="fullscreen-bg">
+        <img src="assets/images/background.jpg" alt="Full Screen Background">
+    </div>    
     <header class="header">
         <h1>CONTRAFAIR LLC</h1>
         <nav>
