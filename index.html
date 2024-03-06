@@ -45,19 +45,6 @@
             min-height: 70%; /* Ensures the image covers the space between the top and bottom offsets */
             object-fit: cover; /* Ensures the aspect ratio is maintained */
         }
-        <!-- .centered-box {
-            position: absolute; /* Position it over the background */
-            top: 50%; /* Center vertically */
-            left: 50%; /* Center horizontally */
-            transform: translate(-50%, -50%); /* Align the center of the box with the center of the screen */
-            width: 80%; /* Take up 80% of the screen's width */
-            height: 70%; /* Take up 80% of the screen's height */
-            background-color: rgba(255, 255, 255, 0.95); /* Black with 50% opacity */
-            color: white; /* Text color, change as needed */
-            padding: 20px; /* Adjust padding as needed */
-            box-sizing: border-box; /* Include padding and border in the box's total width and height */
-            /* Add any additional styling here */
-        } -->
         .centered-box {
             display: flex; /* Use Flexbox to center the contents */
             justify-content: center; /* Center horizontally */
@@ -68,7 +55,7 @@
             transform: translate(-50%, -50%);
             width: 80%;
             height: 70%;
-            background-color: rgba(255, 255, 255, 0.95); /* Changed for visibility */
+            background-color: rgba(255, 255, 255, 1.0); /* Changed for visibility */
             color: black; /* Adjusted for readability */
             padding: 20px;
             box-sizing: border-box;
@@ -78,6 +65,14 @@
             max-height: 100%; /* Ensure the image does not exceed the box's height */
             object-fit: contain; /* Ensures that the image's aspect ratio is maintained without cropping */
         }
+        .about-section {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            color: black; /* Adjust text color as needed */
+            padding: 50px 20px; /* Add padding for aesthetic spacing */
+            margin-top: -5px; /* Ensure separation from the section above, adjust as needed */
+        }        
     </style>
 </head>
 <body>
@@ -92,12 +87,18 @@
         <h1>CONTRAFAIR LLC</h1>
         <nav>
             <a href="#">Home</a> |
-            <a href="#">About</a> |
+            <a href="#about">About</a> |
             <a href="#">Services</a> |
             <a href="#">Contact</a>
         </nav>
     </header>
-    
+    <!-- ### ABOUT ### -->
+    <!-- <section id="about" class="about-section">
+        <div class="centered-box">
+            <h2>About Contrafair LLC</h2>
+            <p>Here is some information about Contrafair LLC. Replace this with your own content.</p>
+        </div>
+    </section> -->
     <footer class="footer">
         <p>&copy; 2024 Contrafair LLC. All rights reserved.</p>
     </footer>
@@ -105,5 +106,19 @@
     <!-- Add your scripts below -->
     <script src="assets/js/bootstrap.min.js"></script>
     <script src="assets/js/custom.js"></script>
+
+    <script>
+        // Smooth scroll for links with hashes
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+    
+    
 </body>
 </html>
