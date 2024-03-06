@@ -8,34 +8,86 @@
     <link href="assets/css/template.css" rel="stylesheet">
     <!-- Add other stylesheets if needed -->
     <style>
-        body { background-color: white; }
-        .header, .footer { text-align: center; padding: 1rem; }
-        .main-content { margin: 20px; padding: 20px; }
-
+        body {
+            background-color: white;
+            position: relative; /* Acts as a reference for absolutely positioned elements */
+            min-height: 100vh; /* Ensures body takes at least the full height of the viewport */
+            margin: 0; /* Resets default margin */
+        }
+        .header, .footer {
+            text-align: center;
+            padding: 1rem;
+        }
+        .main-content {
+            margin: 20px;
+            padding: 20px;
+        }
+        .footer {
+            position: absolute; /* Positions the footer absolutely within the body */
+            left: 0; /* Aligns it to the left */
+            right: 0; /* Aligns it to the right */
+            bottom: 1%; /* Positions it at the bottom 1% of the screen */
+            text-align: center; /* Keeps text centered */
+            padding: 1rem; /* Maintains padding */
+        }
         .fullscreen-bg {
-            position: fixed; /* Make it cover the screen but with spacing */
-            top: 20%; /* Leave 20% space from the top */
+            position: fixed; /* Covers the screen with spacing */
+            top: 17%; /* Leaves 20% space from the top */
             right: 0;
-            bottom: 10%; /* Leave 10% space from the bottom */
+            bottom: 10%; /* Leaves 10% space from the bottom */
             left: 0;
             overflow: hidden;
-            z-index: -1; /* Ensure it stays behind other content */
+            z-index: -1; /* Ensures it stays behind other content */
         }
-        
         .fullscreen-bg img {
-            width: 100%;  /* Cover the width of the container */
-            height: auto; /* Adjust height automatically to maintain aspect ratio */
-            min-height: 70%; /* Ensure the image covers the space between the top and bottom offsets */
-            object-fit: cover; /* Ensure the aspect ratio is maintained */
+            width: 100%;  /* Covers the width of the container */
+            height: auto; /* Adjusts height automatically to maintain aspect ratio */
+            min-height: 70%; /* Ensures the image covers the space between the top and bottom offsets */
+            object-fit: cover; /* Ensures the aspect ratio is maintained */
         }
-        
-        
+        <!-- .centered-box {
+            position: absolute; /* Position it over the background */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Align the center of the box with the center of the screen */
+            width: 80%; /* Take up 80% of the screen's width */
+            height: 70%; /* Take up 80% of the screen's height */
+            background-color: rgba(255, 255, 255, 0.95); /* Black with 50% opacity */
+            color: white; /* Text color, change as needed */
+            padding: 20px; /* Adjust padding as needed */
+            box-sizing: border-box; /* Include padding and border in the box's total width and height */
+            /* Add any additional styling here */
+        } -->
+        .centered-box {
+            display: flex; /* Use Flexbox to center the contents */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            height: 70%;
+            background-color: rgba(255, 255, 255, 0.95); /* Changed for visibility */
+            color: black; /* Adjusted for readability */
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .centered-image {
+            max-width: 100%; /* Ensure the image does not exceed the box's width */
+            max-height: 100%; /* Ensure the image does not exceed the box's height */
+            object-fit: contain; /* Ensures that the image's aspect ratio is maintained without cropping */
+        }
     </style>
 </head>
 <body>
     <div class="fullscreen-bg">
         <img src="assets/images/background.jpg" alt="Full Screen Background">
-    </div>    
+            <div class="centered-box">
+                <img src="assets/images/CF_Logo_2024_clear_4096.png" alt="CF" class="centered-image">
+            </div>
+        </div>
+    </div>  
     <header class="header">
         <h1>CONTRAFAIR LLC</h1>
         <nav>
@@ -45,14 +97,9 @@
             <a href="#">Contact</a>
         </nav>
     </header>
-
-    <section class="main-content">
-        <h2>Welcome to Contrafair</h2>
-        <p>This is a placeholder text. Replace it with your own content.</p>
-    </section>
-
+    
     <footer class="footer">
-        <p>&copy; 2024 Website Name. All rights reserved.</p>
+        <p>&copy; 2024 Contrafair LLC. All rights reserved.</p>
     </footer>
 
     <!-- Add your scripts below -->
