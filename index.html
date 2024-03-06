@@ -13,20 +13,22 @@
         .main-content { margin: 20px; padding: 20px; }
 
         .fullscreen-bg {
-            position: fixed; /* Make it cover the entire screen */
-            top: 0;
+            position: fixed; /* Make it cover the screen but with spacing */
+            top: 20%; /* Leave 20% space from the top */
             right: 0;
-            bottom: 0;
+            bottom: 10%; /* Leave 10% space from the bottom */
             left: 0;
             overflow: hidden;
             z-index: -1; /* Ensure it stays behind other content */
         }
         
         .fullscreen-bg img {
-            width: 100vw;   /* Cover the width of the screen */
-            height: 100vh;  /* Cover the height of the screen */
-            object-fit: cover; /* Ensure the aspect ratio is maintained while covering the screen */
+            width: 100%;  /* Cover the width of the container */
+            height: auto; /* Adjust height automatically to maintain aspect ratio */
+            min-height: 70%; /* Ensure the image covers the space between the top and bottom offsets */
+            object-fit: cover; /* Ensure the aspect ratio is maintained */
         }
+        
         
     </style>
 </head>
